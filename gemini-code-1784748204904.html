@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffin Kramer | Engineering Portfolio</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --code-bg: #090d16;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            color: var(--text-main);
+        }
+
+        .project-tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .spec-item strong {
+            color: var(--text-main);
+            display: block;
+        }
+
+        .learnings {
+            background-color: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #f59e0b;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            color: #fbbf24;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Griffin Kramer</h1>
+        <div class="subtitle">Engineering & Embedded Systems Projects</div>
+        <p class="bio">Undergraduate Engineering Student focusing on embedded systems, hardware design, dynamic systems modeling, and computational mechanics.</p>
+        <div class="links">
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="assets/resume.pdf" target="_blank">Resume (PDF)</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Featured Hardware & Embedded Projects</h2>
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">LASER Project (Nine Gallon Nails)</h3>
+                <span class="project-tag">Embedded Systems / Haptics</span>
+            </div>
+            <p class="project-desc">
+                An assistive auditory alert system designed for hearing-impaired users. Features a central Arduino hub synchronized with a multi-motor tactile haptic pillow array to translate acoustic cues into real-time physical warnings.
+            </p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Architecture</strong>
+                    Arduino, Central Hub Sync
+                </div>
+                <div class="spec-item">
+                    <strong>Actuation</strong>
+                    Multi-motor Array, Polarity Switching
+                </div>
+                <div class="spec-item">
+                    <strong>Display / UI</strong>
+                    Custom SPI/I2C OLED Driver
+                </div>
+            </div>
+            <div class="learnings">
+                <strong>Failure Analysis & Engineering Iteration:</strong> Early prototypes experienced catastrophic overcurrent spikes that damaged microcontrollers due to unregulated motor stall currents. Redesigned to integrate active overcurrent protection, H-bridge drivers, and consolidated actuator channels on custom SMT PCB layouts.
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Direct Register SPI/I2C OLED Display Controller</h3>
+                <span class="project-tag">C++ / Firmware</span>
+            </div>
+            <p class="project-desc">
+                Library-free driver interface written in C++ for 7-pin SPI and I2C OLED modules. Provides direct register-level control over display initialization, pin mapping, and screen buffer updates without third-party library overhead.
+            </p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Language</strong>
+                    C++
+                </div>
+                <div class="spec-item">
+                    <strong>Protocols</strong>
+                    7-Pin SPI, I2C
+                </div>
+                <div class="spec-item">
+                    <strong>Focus</strong>
+                    Bare-metal Pin Manipulation
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Comet 3I/ATLAS Trajectory & Orbit Analysis</h3>
+                <span class="project-tag">Python / Computational Math</span>
+            </div>
+            <p class="project-desc">
+                Numerical orbit propagation and data visualizer built in Python. Uses SciPy differential equation solvers and NumPy matrix operations to model orbital trajectories from astronomical observational datasets.
+            </p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Stack</strong>
+                    Python, NumPy, SciPy, Matplotlib
+                </div>
+                <div class="spec-item">
+                    <strong>Methods</strong>
+                    Numerical Integration, Least-Squares
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Griffin Kramer · Hosted with GitHub Pages</p>
+    </footer>
+</div>
+
+</body>
+</html>
